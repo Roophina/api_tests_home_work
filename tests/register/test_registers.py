@@ -1,5 +1,5 @@
 from fixtures.constants import ResponseText
-from fixtures.register.model import RegisterUser, RegisterUserResponse, RegisterUserResponseInvalid
+from fixtures.register.model import RegisterUser, RegisterUserResponse, RegisterUserResponseInvalid, RegisterUserInt
 
 
 class TestRegisterUser:
