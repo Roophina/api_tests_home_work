@@ -5,6 +5,7 @@ import pytest
 from fixtures.app import StoreApp
 from fixtures.auth.model import RegisterAuthResponse, AuthUser
 from fixtures.register.model import RegisterUser, RegisterUserResponse
+from fixtures.user_info.model import AddUserInfo, UserData
 
 logger = logging.getLogger("api")
 
@@ -26,6 +27,13 @@ def register_auth(app):
     uuid = res_register.data.uuid
     return AuthUser(header=header, uuid=uuid)
 
+
+@pytest.fixture()
+def register_auth_info(app, register_auth):
+    data = AddUserInfo.random()
+    app.user_info.add_user_info(uuid=register_auth.uuid, data=data, header=register_auth.header,
+                                type_response=None)
+    return UserData(header=register_auth.header, uuid=register_auth.uuid, data_info=data)
 
 
 def pytest_addoption(parser):

@@ -13,6 +13,6 @@ class TestAuthUser:
         data = RegisterUser.random()
         res_register = app.register.register(data=data, type_response=RegisterUserResponse)
         assert res_register.status_code == 201
-        assert res_register.data.message == ResponseText.MESSAGE_REGISTER_USER
+        assert res_register.data_info.message == ResponseText.MESSAGE_REGISTER_USER
         res_auth = app.auth.auth(data=data, type_response=RegisterAuthResponse)
         assert res_auth.status_code == 200

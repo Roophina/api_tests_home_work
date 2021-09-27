@@ -23,7 +23,7 @@ class RegisterUserInt(BaseClass):
 
     @staticmethod
     def random():
-        return RegisterUserInt(username=fake.number(), password=fake.number())
+        return RegisterUserInt(username=fake.pyint(), password=fake.pyint())
 
 
 @attr.s

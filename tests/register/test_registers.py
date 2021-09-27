@@ -12,7 +12,7 @@ class TestRegisterUser:
         data = RegisterUser.random()
         res = app.register.register(data=data, type_response=RegisterUserResponse)
         assert res.status_code == 201
-        assert res.data.message == ResponseText.MESSAGE_REGISTER_USER
+        assert res.data_info.message == ResponseText.MESSAGE_REGISTER_USER
 
     def test_register_user_with_empty_username(self, app):
         """
@@ -24,7 +24,7 @@ class TestRegisterUser:
         setattr(data, 'username', None)
         res = app.register.register(data=data, type_response=RegisterUserResponseInvalid)
         assert res.status_code == 400
-        assert res.data.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
+        assert res.data_info.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
 
     def test_register_user_with_empty_password(self, app):
         """
@@ -36,7 +36,7 @@ class TestRegisterUser:
         setattr(data, 'password', None)
         res = app.register.register(data=data, type_response=RegisterUserResponseInvalid)
         assert res.status_code == 400
-        assert res.data.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
+        assert res.data_info.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
 
     def test_register_user_twice(self, app):
         """
@@ -48,10 +48,10 @@ class TestRegisterUser:
         data = RegisterUser.random()
         res = app.register.register(data=data, type_response=RegisterUserResponse)
         assert res.status_code == 201
-        assert res.data.message == ResponseText.MESSAGE_REGISTER_USER
+        assert res.data_info.message == ResponseText.MESSAGE_REGISTER_USER
         res2 = app.register.register(data=data, type_response=RegisterUserResponse)
         assert res2.status_code == 400
-        assert res2.data.message == ResponseText.MESSAGE_REGISTER_USER_TWICE
+        assert res2.data_info.message == ResponseText.MESSAGE_REGISTER_USER_TWICE
 
     def test_register_user_with_int_username(self, app):
         """
@@ -62,4 +62,4 @@ class TestRegisterUser:
         data = RegisterUserInt.random()
         res = app.register.register(data=data, type_response=RegisterUserResponseInvalid)
         assert res.status_code == 400
-        assert res.data.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
+        assert res.data_info.message == ResponseText.MESSAGE_REGISTER_USER_INVALID
