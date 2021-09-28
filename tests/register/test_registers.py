@@ -64,7 +64,7 @@ class TestRegisterUser:
         assert res2.status_code == 400
         assert res2.data.message == ResponseText.MESSAGE_REGISTER_USER_TWICE
 
-    @pytest.mark.xfail("Ожидается код ответа 400, фактически - 201")
+    @pytest.mark.xfail(reason="Ожидается код ответа 400, а приходит 201")
     def test_register_user_with_int_username(self, app):
         """
         1. Try to register user with int username
