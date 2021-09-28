@@ -96,13 +96,13 @@ class UpdateUserInfo(BaseClass):
     @staticmethod
     def big_random():
         address = Address(
-            city=fake.city() * 100000,
-            street=fake.street_name() * 100000,
-            home_number=fake.building_number() * 100000,
+            city=fake.city() * 10000,
+            street=fake.street_name() * 10000,
+            home_number=fake.building_number() * 10000,
         )
         return AddUserInfo(
-            phone=fake.phone_number() * 100000,
-            email=fake.email() * 100000,
+            phone=fake.phone_number() * 10000,
+            email=fake.email() * 10000,
             address=address,
         )
 
