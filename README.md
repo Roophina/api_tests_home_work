@@ -1,12 +1,13 @@
 # Python api tests
 
+[![Build Status](https://app.travis-ci.com/Roophina/api_tests_home_work.svg?branch=master)](https://app.travis-ci.com/Roophina/api_tests_home_work)
+
 This is a tutorial project that shows how to implement api tests in Python
 
 The project uses:
 1. Python
 2. Requests
-3. Allure for reports
-4. CI (GitHub actions)
+3. CI
 
 
 Testing application (write with Flask):
@@ -19,6 +20,7 @@ url: https://stores-tests-api.herokuapp.com
 ###How to start
 
 Use python 3.8 +
+
 Create and activate virtual environments
 
 ```
