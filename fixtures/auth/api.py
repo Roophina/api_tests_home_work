@@ -14,7 +14,7 @@ class Auth(Validator):
     @log("Auth user")
     def auth(self, data: RegisterUser, type_response=None) -> Response:
         """
-        https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0#/register/regUser # noqa
+        https://app.swaggerhub.com/apis-docs/berpress/flask-rest-api/1.0.0#/auth/authUser # noqa
         """
         response = self.app.client.request(
             method="POST",
