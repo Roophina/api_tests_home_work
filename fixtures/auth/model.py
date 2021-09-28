@@ -10,3 +10,10 @@ class RegisterAuthResponse:
 class AuthUser:
     header: dict = attr.ib()
     uuid: int = attr.ib()
+
+
+@attr.s
+class AuthorizationRequiredResponse:
+    description: str = attr.ib()
+    error: str = attr.ib()
+    status_code: int = attr.ib()
