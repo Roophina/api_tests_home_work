@@ -13,7 +13,7 @@ class AuthUser:
 
 
 @attr.s
-class AuthorizationRequiredResponse:
+class NotAuthorizationResponse:
     description: str = attr.ib()
     error: str = attr.ib()
     status_code: int = attr.ib()
